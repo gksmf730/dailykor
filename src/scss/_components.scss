@@ -1,0 +1,98 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+.card-side {
+  position: relative;
+  @include flex-center;
+  flex-direction: column;
+  gap: 8px;
+  width: 176px;
+  height: 176px;
+  margin-top: 87px;
+  background-color: $color-white;
+  border-radius: 32px;
+  box-shadow: 0px 4px 30px 0px #00000040;
+
+  h2 {
+    font-weight: 700;
+    font-size: 24px;
+    color: $color-subtext;
+  }
+
+  .num {
+    position: absolute;
+    bottom: -20px;
+    @include flex-center;
+    width: 64px;
+    height: 40px;
+    background-color: $color-secondary;
+    border-radius: 49px;
+    font-weight: 700;
+    font-size: 24px;
+    color: $color-white;
+  }
+}
+
+.speech-bubble {
+  position: relative;
+  width: 280px;
+  margin-inline: auto;
+  padding: 8px;
+  background-color: $color-white;
+  border-radius: 8px;
+  letter-spacing: $letter-spacing;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -8px;
+    transform: translateX(-50%);
+    width: 16px;
+    height: 8px;
+    background-image: url("/src/image/img-arrow.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+  }
+}
+
+.name-area {
+  position: absolute;
+  z-index: 2;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  @include flex-center;
+  width: 95px;
+  height: 30px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 14px;
+  color: $color-white;
+  line-height: 1;
+  letter-spacing: $letter-spacing;
+}
+
+.button-group {
+  position: relative;
+  z-index: 3;
+  @include flex-center;
+  gap: 24px;
+  width: 374px;
+  height: 94px;
+  margin-top: -62px;
+  margin-inline: auto;
+  background-color: $color-primary;
+  border-radius: 24px 24px 0 0;
+  box-shadow: 0px 0px 40px 0px #00000040;
+
+  button {
+    @include flex-center;
+    flex-direction: column;
+    gap: 10px;
+    color: $color-white;
+    letter-spacing: $letter-spacing;
+  }
+}
